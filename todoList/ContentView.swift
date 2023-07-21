@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var todos = [
+        Todo(title: "do the math homework") ,
+        Todo(title: "clean the dishes") ,
+        Todo(title: "finish the swift accelerator unit 8") ,
+        Todo(title: "go to the gym") ,
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            
+            List(todos) { todo in
+                Text(todo.title)
+            }
     }
 }
 
